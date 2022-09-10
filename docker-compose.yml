@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  tts-server:
+    image: go4ble/tts:latest
+    build: .
+    entrypoint:
+      - tts-server
+    command:
+      - '--use_cuda'
+      - 'true'
+    ports:
+      - '5002:5002'
